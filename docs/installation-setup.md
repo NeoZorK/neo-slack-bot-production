@@ -13,7 +13,7 @@
 
 ### Development Tools
 - **CMake**: Version 3.15 or later (required)
-- **Ninja**: Recommended for faster builds (optional, CMake will use Makefiles if Ninja is not available)
+- **Ninja**: Build system generator (required)
 - **Xcode Command Line Tools**: Required for clang++ compiler
 - **Git**: For cloning repository (version 2.0+)
 

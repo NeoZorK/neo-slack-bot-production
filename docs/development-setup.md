@@ -102,7 +102,7 @@ cd build
 **Build with coverage enabled:**
 ```bash
 cd build
-cmake -DENABLE_COVERAGE=ON ..
+cmake -G Ninja -DENABLE_COVERAGE=ON ..
 cmake --build .
 ctest --output-on-failure
 ```

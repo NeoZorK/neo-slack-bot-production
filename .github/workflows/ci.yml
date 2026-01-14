@@ -80,13 +80,13 @@ jobs:
         cd build
         # CMake will auto-detect OpenSSL, but we can verify paths
         echo "Configuring CMake with OpenSSL prefix: $OPENSSL_PREFIX"
-        cmake ..
+        cmake -G Ninja ..
         
     - name: Build
       run: |
         cd build
         # Build with parallel compilation
-        cmake --build . -j $(sysctl -n hw.ncpu)
+        ninja
         
     - name: Run tests
       run: |

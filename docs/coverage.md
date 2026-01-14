@@ -32,7 +32,7 @@ sudo apt-get install gcov lcov genhtml
 
 ```bash
 cd build
-cmake -DENABLE_COVERAGE=ON ..
+cmake -G Ninja -DENABLE_COVERAGE=ON ..
 ```
 
 This enables:
