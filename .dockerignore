@@ -1,0 +1,73 @@
+# Build artifacts
+obj/
+bin/
+*.o
+*.a
+*.so
+*.dylib
+
+# Executables
+neo-slack-bot
+test_neo_slack_bot
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+
+# CI/CD
+compile_commands.json
+
+# Coverage
+*.gcda
+*.gcno
+*.profdata
+*.profraw
+coverage/
+tests/coverage/
+
+# Doxygen
+docs/api/
+
+# Git
+.git/
+.gitignore
+
+# Documentation (not needed in container)
+docs/
+
+# macOS-specific
+*.app
+*.dmg
+
+# Tests (will be built in container)
+tests/obj/
+tests/bin/
+
+# CMake build directory
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+!cmake/*.cmake
+!CMakeLists.txt
+!**/CMakeLists.txt
+
+# CMake test files
+CTestTestfile.cmake
+Testing/

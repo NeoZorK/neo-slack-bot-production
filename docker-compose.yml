@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: neo-slack-bot:test
+    container_name: neo-slack-bot-test
+    volumes:
+      - .:/app
+    command: bash -c "cd build && ctest --output-on-failure"
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN:-test-token}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN:-test-app-token}
+
+  test-perf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: neo-slack-bot:test
+    container_name: neo-slack-bot-test-perf
+    volumes:
+      - .:/app
+    command: bash -c "cd build && ./bin/test_neo_slack_bot --perf || ctest --output-on-failure"
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN:-test-token}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN:-test-app-token}
+
+  coverage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ENABLE_COVERAGE=ON
+    image: neo-slack-bot:test
+    container_name: neo-slack-bot-coverage
+    volumes:
+      - .:/app
+    command: bash -c "cd build && ctest --output-on-failure && cmake --build . --target coverage || true"
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN:-test-token}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN:-test-app-token}
