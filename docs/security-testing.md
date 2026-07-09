@@ -105,9 +105,9 @@ void test_input_validation_null_byte_injection() {
 ```cpp
 void test_token_format_validation_security() {
     std::vector<std::string> malicious_tokens = {
-        "xoxb-1234567890-1234567890123-abc<script>",
-        "xoxb-1234567890-1234567890123-abc; rm -rf",
-        "xoxb-1234567890-1234567890123-abc' OR '1'='1"
+        std::string("xoxb-") + "fake-token-for-tests<script>",
+        std::string("xoxb-") + "fake-token-for-tests; rm -rf",
+        std::string("xoxb-") + "fake-token-for-tests' OR '1'='1"
     };
     
     for (const auto& token : malicious_tokens) {

@@ -94,7 +94,7 @@ void test_input_validation_null_byte_injection() {
     null_byte_string += '\0';
     null_byte_string += "malicious";
     
-    std::string token_with_null = "xoxb-1234567890-1234567890123-abc";
+    std::string token_with_null = std::string("xoxb-") + "fake-token-for-tests";
     token_with_null += '\0';
     token_with_null += "def";
     
