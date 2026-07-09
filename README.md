@@ -3,7 +3,7 @@
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.cppreference.com/w/cpp/17)
 [![Version](https://img.shields.io/badge/version-v0.0.7-brightgreen.svg)](CHANGELOG.md)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](docs/docker-setup.md)
-[![License](https://img.shields.io/badge/license-Private-red.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 A high-performance, production-ready Slack bot built with C++17. Uses Slack's Socket Mode for real-time event processing and integrates with native notifications on macOS and console/log logging on Linux/Windows.
 
