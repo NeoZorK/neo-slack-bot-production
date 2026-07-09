@@ -1,6 +1,6 @@
 # Dockerfile for Neo Slack Bot testing environment
 # Note: Docker is for testing only. Production requires macOS due to macOS-specific features.
-FROM --platform=linux/amd64 ubuntu:22.04
+FROM --platform=linux/amd64 ubuntu:26.04
 
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
