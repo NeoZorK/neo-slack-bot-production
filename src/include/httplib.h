@@ -10614,6 +10614,7 @@ inline bool ClientImpl::handle_request(Stream &strm, Request &req,
 
   if (!is_ssl() && !proxy_host_.empty() && proxy_port_ != -1) {
     auto req2 = req;
+    // codeql[cpp/non-https-url] This is the required absolute-form URI for plain HTTP proxy requests.
     req2.path = "http://" +
                 detail::make_host_and_port_string(host_, port_, false) +
                 req.path;
