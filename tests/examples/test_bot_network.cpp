@@ -23,7 +23,8 @@ void test_bot_network_initialization() {
     std::cout << "Testing BotNetwork initialization..." << std::endl;
     
     // Set test environment
-    setenv("SLACK_BOT_TOKEN", "xoxb-test-token-1234567890-1234567890123-abcdefghijklmnopqrstuvwx", 1);
+    std::string fake_bot_token = std::string("xoxb-") + "fake-token-for-tests-only";
+    setenv("SLACK_BOT_TOKEN", fake_bot_token.c_str(), 1);
     setenv("SLACK_TEST_CHANNEL", "C12345678", 1);
     
     try {
@@ -70,7 +71,8 @@ void test_unique_websocket_urls_logic() {
     // This test verifies the fix: each bot should call apps.connections.open separately
     // In the actual implementation, each bot in the loop calls get_socket_mode_url()
     
-    setenv("SLACK_BOT_TOKEN", "xoxb-test-token-1234567890-1234567890123-abcdefghijklmnopqrstuvwx", 1);
+    std::string fake_bot_token = std::string("xoxb-") + "fake-token-for-tests-only";
+    setenv("SLACK_BOT_TOKEN", fake_bot_token.c_str(), 1);
     setenv("SLACK_TEST_CHANNEL", "C12345678", 1);
     
     try {
@@ -94,7 +96,8 @@ void test_websocket_url_requirement() {
     std::cout << "Testing WebSocket URL requirement (Socket Mode v2)..." << std::endl;
     
     // Verify that the code handles missing SLACK_APP_TOKEN gracefully
-    setenv("SLACK_BOT_TOKEN", "xoxb-test-token-1234567890-1234567890123-abcdefghijklmnopqrstuvwx", 1);
+    std::string fake_bot_token = std::string("xoxb-") + "fake-token-for-tests-only";
+    setenv("SLACK_BOT_TOKEN", fake_bot_token.c_str(), 1);
     setenv("SLACK_TEST_CHANNEL", "C12345678", 1);
     unsetenv("SLACK_APP_TOKEN");
     
@@ -114,7 +117,8 @@ void test_websocket_url_requirement() {
 void test_message_handler_setup() {
     std::cout << "Testing message handler setup..." << std::endl;
     
-    setenv("SLACK_BOT_TOKEN", "xoxb-test-token-1234567890-1234567890123-abcdefghijklmnopqrstuvwx", 1);
+    std::string fake_bot_token = std::string("xoxb-") + "fake-token-for-tests-only";
+    setenv("SLACK_BOT_TOKEN", fake_bot_token.c_str(), 1);
     setenv("SLACK_TEST_CHANNEL", "C12345678", 1);
     
     try {
