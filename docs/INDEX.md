@@ -97,6 +97,7 @@ System Metrics Interface : src/interfaces/i_system_metrics.hpp
 ## Documentation
 Project Index : docs/INDEX.md
 Project README : README.md
+Codex Agent Instructions : AGENTS.md
 Changelog : CHANGELOG.md
 Contributing Guide : CONTRIBUTING.md
 License : LICENSE
