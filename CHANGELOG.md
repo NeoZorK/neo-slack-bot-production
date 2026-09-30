@@ -5,6 +5,11 @@ All notable changes to Neo Slack Bot will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Archived - 2026-09-30
+
+- Project archived; no further development or support. No version bump (last version remains 0.0.7).
+- README rewritten to describe the project honestly (personal-use Slack Socket Mode client, not battle-tested), with "Why archived" and "What is reusable" sections.
+
 ## [0.0.7] - 2026-01-14
 
 ### Added
