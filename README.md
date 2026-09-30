@@ -1,23 +1,35 @@
-# Neo Slack Bot
+# Neo Slack Bot — ARCHIVED (2026-09-30)
 
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.cppreference.com/w/cpp/17)
-[![Version](https://img.shields.io/badge/version-v0.0.7-brightgreen.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v0.0.7-lightgrey.svg)](CHANGELOG.md)
+[![Status](https://img.shields.io/badge/status-archived-red.svg)](#why-archived)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)](docs/docker-setup.md)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-A high-performance, production-ready Slack bot built with C++17. Uses Slack's Socket Mode for real-time event processing and integrates with native notifications on macOS and console/log logging on Linux/Windows.
+> **ARCHIVED — no longer maintained (2026-09-30).** This repository is read-only history. No issues, pull requests or security fixes will be handled.
+
+A personal-use Slack Socket Mode client written in C++17 that shows native macOS notifications for Slack events (console/log output on Linux and Windows). Version v0.0.7; it was never battle-tested and is not intended for production use.
+
+## Why archived
+
+- Slack's own apps and the official Bolt SDKs already cover this use case.
+- C++ gave no practical advantage for a notification client.
+
+## What is reusable
+
+- The Socket Mode client: its own WebSocket implementation over OpenSSL/TLS (`src/websocket_client*.cpp`, `src/websocket_connection*`, `src/websocket_frame.*`).
+- The rate limiter (`src/rate_limiter.*`).
+- The macOS Keychain integration (`src/platform/macos/macos_keychain_impl.*`).
 
 ## Overview
 
-Neo Slack Bot is a lightweight, efficient Slack bot implementation designed for cross-platform usage. It leverages WebSocket-based Socket Mode for real-time communication with Slack's API.
+Neo Slack Bot connects to Slack through Socket Mode (WebSocket) and turns incoming events into notifications. It is a small personal project, not a framework.
 
 ### Key Highlights
 
-- **Real-time Processing**: WebSocket-based Socket Mode for instant event handling
-- **Native Integration**: macOS system notifications for seamless user experience
-- **High Performance**: C++17 implementation with minimal resource footprint
-- **Robust Architecture**: Clean, modular design following SOLID principles
-- **Production Ready**: Comprehensive error handling and reconnection logic
+- **Socket Mode**: WebSocket connection with reconnection logic
+- **Native Integration**: macOS system notifications
+- **Modular code**: separate components for WebSocket, HTTP, filtering, settings and notifications
 
 ## Features
 
@@ -240,7 +252,7 @@ Comprehensive documentation is available in the `docs/` directory:
 
 ## Contributing
 
-This is a private project. For internal contributors:
+Contributions are closed (archived project). Historical coding conventions:
 
 1. Follow the coding standards in `docs/rules.md`
 2. Ensure 100% test coverage for new features
@@ -280,18 +292,17 @@ See [docs/roadmap.md](docs/roadmap.md) for detailed version plan:
 - **v0.0.3**: Command system and API integration
 - **v0.0.4**: Settings management and filtering
 - **v0.0.5**: Error recovery and performance optimization
-- **v0.0.6**: Socket Mode v2, frame masking, metrics system, production-ready stability
+- **v0.0.6**: Socket Mode v2, frame masking, metrics system, stability work
 
 ## License
 
-This is a private project. All rights reserved.
+MIT License, see [LICENSE](LICENSE).
 
 ## Support
 
-For issues and questions:
+The project is archived and unsupported. For reference:
 - Check documentation in `docs/` directory
 - Review `docs/rules.md` for development guidelines
-- Consult `CLAUDE.md` for AI assistant instructions
 
 ---
 
